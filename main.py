@@ -20,7 +20,7 @@ def main() -> None:
     text = WORD.strip()
     assert 1 <= len(text) <= 30, f"entry is {len(text)} chars, must be 1-30"
     assert text.strip(), "entry must not be only white space"
-    assert " " not in text, "entry must be a single word"
+    assert text.isalpha(), "entry must be a single word of letters only"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
